@@ -36,6 +36,47 @@
                 android:layout_marginTop="2dp" />
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/route"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/row_bg"
+            android:drawableStart="@drawable/ic_route"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/text_secondary"
+            android:focusable="true"
+            android:text="Route"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="18dp"
+            android:paddingBottom="10dp"
+            android:singleLine="true"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/row_bg"
+            android:drawableStart="@drawable/ic_sort"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/text_secondary"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="18dp"
+            android:paddingBottom="10dp"
+            android:singleLine="true"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp" />
+
         <ProgressBar
             android:id="@+id/loading"
             style="@android:style/Widget.Material.ProgressBar.Small"
@@ -73,8 +114,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="No videos in this folder"
+            android:text="No videos or photos in this folder"
             android:textSize="18sp"
             android:visibility="gone" />
     </FrameLayout>
+
+    <TextView
+        style="@style/Text.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Hold OK on a folder to add it to favorites  ·  Menu: sort  ·  Route (top): map of where the photos and videos were taken"
+        android:textColor="@color/text_tertiary"
+        android:textSize="13sp" />
 </LinearLayout>

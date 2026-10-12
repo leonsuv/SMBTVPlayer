@@ -32,6 +32,10 @@
             android:name=".PlayerActivity"
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden"
             android:exported="false" />
+
+        <activity
+            android:name=".MapActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

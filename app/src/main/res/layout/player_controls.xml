@@ -100,6 +100,13 @@
                 android:orientation="horizontal">
 
                 <ImageButton
+                    android:id="@+id/prev_button"
+                    style="@style/ControlButton"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="Previous item"
+                    android:src="@drawable/ic_skip_previous" />
+
+                <ImageButton
                     android:id="@+id/exo_rew"
                     style="@style/ControlButton"
                     android:contentDescription="Back 10 seconds"
@@ -122,6 +129,13 @@
                     style="@style/ControlButton"
                     android:contentDescription="Forward 30 seconds"
                     android:src="@drawable/ic_forward" />
+
+                <ImageButton
+                    android:id="@+id/next_button"
+                    style="@style/ControlButton"
+                    android:layout_marginStart="20dp"
+                    android:contentDescription="Next item"
+                    android:src="@drawable/ic_skip_next" />
             </LinearLayout>
 
             <ImageButton
