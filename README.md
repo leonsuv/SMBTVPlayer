@@ -3,6 +3,18 @@
 A fast, minimal Android TV player for videos and photos on SMB/CIFS network shares (NAS, Windows shares, Samba).
 Built for low-power TV boxes, e.g. Amlogic S905Y4 with 2 GB RAM.
 
+## Screenshots
+| | |
+|---|---|
+| ![Start screen with favorites and shares](docs/screenshots/library.png) | ![Folder browser with resume positions](docs/screenshots/browser.png) |
+| Start screen: favorites and network shares | Browser: sorting and resume positions |
+| ![Video player controls](docs/screenshots/player.jpg) | ![Stats for nerds](docs/screenshots/stats.jpg) |
+| Player | Stats for nerds |
+| ![Photo info panel](docs/screenshots/photo-info.jpg) | ![Route map of a photo folder](docs/screenshots/route.jpg) |
+| Photo info (EXIF) | Route of a trip folder |
+
+<sub>Screenshots use generated sample media.</sub>
+
 ## Features
 - Browse SMB2/SMB3 shares with the remote: folders first, then videos and photos, Back goes up a folder
 - Sort by name, date created or date modified, ascending or descending (Menu or the sort button)
