@@ -17,8 +17,29 @@ val VIDEO_EXTENSIONS = setOf(
     "mkv", "mp4", "m4v", "mov", "avi", "ts", "m2ts", "mpg", "mpeg", "wmv", "webm", "flv", "3gp"
 )
 
-class SmbEntry(val name: String, val isDir: Boolean, val size: Long) {
-    val isVideo: Boolean get() = name.substringAfterLast('.', "").lowercase() in VIDEO_EXTENSIONS
+/** Camera RAW formats; shown via the full-size JPEG preview the camera embeds in the file. */
+val RAW_EXTENSIONS = setOf(
+    "dng", "cr2", "cr3", "crw", "nef", "nrw", "arw", "srf", "sr2", "raf", "orf", "rw2", "rwl",
+    "pef", "srw", "x3f", "3fr", "iiq", "erf", "kdc", "mrw", "mef", "mos",
+)
+
+val IMAGE_EXTENSIONS = setOf("jpg", "jpeg", "png", "webp", "gif", "bmp", "heic", "heif") + RAW_EXTENSIONS
+
+fun isVideoName(name: String) = name.substringAfterLast('.', "").lowercase() in VIDEO_EXTENSIONS
+
+fun isImageName(name: String) = name.substringAfterLast('.', "").lowercase() in IMAGE_EXTENSIONS
+
+/** A directory entry; [created] and [modified] are epoch milliseconds. */
+class SmbEntry(
+    val name: String,
+    val isDir: Boolean,
+    val size: Long,
+    val created: Long = 0L,
+    val modified: Long = 0L,
+) {
+    val isVideo: Boolean get() = !isDir && isVideoName(name)
+    val isImage: Boolean get() = !isDir && isImageName(name)
+    val isMedia: Boolean get() = isVideo || isImage
 }
 
 /**
@@ -71,6 +92,8 @@ object Smb {
                     name = it.fileName,
                     isDir = EnumWithValue.EnumUtils.isSet(it.fileAttributes, FileAttributes.FILE_ATTRIBUTE_DIRECTORY),
                     size = it.endOfFile,
+                    created = it.creationTime.toEpochMillis(),
+                    modified = it.lastWriteTime.toEpochMillis(),
                 )
             }
             .toList()

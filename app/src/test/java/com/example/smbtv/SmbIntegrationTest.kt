@@ -137,7 +137,7 @@ class SmbIntegrationTest {
         store.addSource(extra)
         assertEquals(extra, store.sources().single { it.id == extra.id })
 
-        store.removeSource(extra)
+        store.removeSource(extra.id)
         assertEquals(listOf(source), store.sources())
 
         val uri = smbUri(source.id, "Movies/big.mkv").toString()

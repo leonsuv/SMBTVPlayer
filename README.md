@@ -1,13 +1,24 @@
 # SMB TV Player
 
-A fast, minimal Android TV video player for SMB/CIFS network shares (NAS, Windows shares, Samba).
+A fast, minimal Android TV player for videos and photos on SMB/CIFS network shares (NAS, Windows shares, Samba).
 Built for low-power TV boxes, e.g. Amlogic S905Y4 with 2 GB RAM.
 
 ## Features
-- Browse SMB2/SMB3 shares with the remote: folders first, video files only, Back goes up a folder
+- Browse SMB2/SMB3 shares with the remote: folders first, then videos and photos, Back goes up a folder
+- Sort by name, date created or date modified, ascending or descending (Menu or the sort button)
+- Favorites: hold OK on a folder to pin it to the start screen
+- Manage shares and favorites (hold OK or press Menu): rename, edit connection, reorder, remove
 - Streams directly over SMB with full seeking, no download or transcoding
 - Hardware decoding via Media3/ExoPlayer (H.264, HEVC incl. 4K60/10-bit, VP9, AV1 where the device supports it)
-- Plays the rest of the folder automatically; remembers and shows resume positions
+- Photos (JPEG, PNG, WebP, HEIC, GIF, BMP) and camera RAW (DNG, CR2, NEF, ARW, RAF, ORF, RW2, …, shown
+  via the embedded full-size preview), decoded at screen size and rotated per EXIF
+- Photos and videos of a folder play as one playlist in the browser's order: Left/Right on a photo,
+  ⏮ / ⏭ in the video controls, and the end of a video moves to the next item
+- Photo info panel (OK / INFO on a photo): file, camera, lens, exposure, all EXIF tags, and the place
+  name for geotagged photos; OK opens the location on an OpenStreetMap map
+- Route: the time-ordered GPS track of every photo and video below a folder on a map
+  (metadata-only parallel scan, cached on the device)
+- Remembers and shows resume positions
 - Quick seek with the controls hidden: tap Left/Right for ±10 s, hold to accelerate
 - Back closes overlays first, then the player
 - "Stats for nerds" panel (info button or the remote's INFO key): live network/buffer/fps graphs,
