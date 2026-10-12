@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Custom Media3 controller. Views with exo_* ids are wired up by PlayerControlView. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="440dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/scrim_bottom" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:paddingStart="64dp"
+        android:paddingEnd="64dp"
+        android:paddingBottom="36dp">
+
+        <TextView
+            android:id="@+id/player_subtitle"
+            style="@style/Text.Eyebrow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="#B3FFFFFF" />
+
+        <TextView
+            android:id="@+id/player_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:singleLine="true"
+            android:textColor="#FFFFFFFF"
+            android:textSize="30sp" />
+
+        <androidx.media3.ui.DefaultTimeBar
+            android:id="@+id/exo_progress"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/timebar_bg"
+            android:focusable="true"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:bar_height="4dp"
+            app:buffered_color="#59FFFFFF"
+            app:played_color="#FFFFFFFF"
+            app:scrubber_color="#FFFFFFFF"
+            app:scrubber_dragged_size="20dp"
+            app:scrubber_enabled_size="14dp"
+            app:touch_target_height="28dp"
+            app:unplayed_color="#26FFFFFF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
+
+            <TextView
+                android:id="@+id/exo_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFeatureSettings="tnum"
+                android:textColor="#FFFFFFFF"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/exo_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFeatureSettings="tnum"
+                android:textColor="#99FFFFFF"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/exo_rew"
+                    style="@style/ControlButton"
+                    android:contentDescription="Back 10 seconds"
+                    android:src="@drawable/ic_rewind" />
+
+                <ImageButton
+                    android:id="@+id/exo_play_pause"
+                    style="@style/ControlButton"
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@drawable/play_bg"
+                    android:contentDescription="Play or pause"
+                    android:padding="20dp"
+                    android:tint="@color/play_icon" />
+
+                <ImageButton
+                    android:id="@+id/exo_ffwd"
+                    style="@style/ControlButton"
+                    android:contentDescription="Forward 30 seconds"
+                    android:src="@drawable/ic_forward" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/info_button"
+                style="@style/ControlButton"
+                android:layout_gravity="end|center_vertical"
+                android:contentDescription="Stats for nerds"
+                android:src="@drawable/ic_info" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

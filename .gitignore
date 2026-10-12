@@ -1,0 +1,16 @@
+# Build output
+build/
+.gradle/
+.kotlin/
+captures/
+
+# Machine-specific / secrets
+local.properties
+keystore.properties
+*.jks
+*.keystore
+
+# IDE
+.idea/
+*.iml
+.DS_Store
